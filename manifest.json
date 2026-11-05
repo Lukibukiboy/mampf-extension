@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "MaMpf Enhancer",
+  "version": "0.1.0",
+  "description": "Scroll over the speed selector in MaMpf's video player to change playback speed.",
+  "content_scripts": [
+    {
+      "matches": ["https://mampf.mathi.uni-heidelberg.de/media/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
