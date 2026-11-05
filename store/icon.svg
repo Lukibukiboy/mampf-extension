@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Inspired by the MaMpf medallion (navy #223e62, slate rings, concentric discs), redrawn as a speed dial. -->
+  <circle cx="64" cy="64" r="46.25" fill="#223e62" stroke="#c5d0df" stroke-width="3.5"/>
+  <path d="M37.48 90.52L33.59 94.41M26.5 64L21 64M37.48 37.48L33.59 33.59M64 26.5L64 21M90.52 37.48L94.41 33.59M101.5 64L107 64M90.52 90.52L94.41 94.41"
+        stroke="#c5d0df" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="64" cy="64" r="33" fill="#e5eaf1" stroke="#91a6c3" stroke-width="3.5"/>
+  <path d="M87.64 45.53L68.62 69.91L60.06 67.08L59.38 58.09Z" fill="#223e62" stroke="#223e62" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="64" cy="64" r="11" fill="#223e62"/>
+  <path d="M60.5 58.8L69.5 64L60.5 69.2Z" fill="#e5eaf1" stroke="#e5eaf1" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>

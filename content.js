@@ -1,6 +1,11 @@
 // Scroll over THymE's speed dropdown to change playback speed (like Enhancer for YouTube).
-// Hold Alt for fine steps.
-const STEP = 0.1, FINE_STEP = 0.01, MIN = 0.1, MAX = 4;
+// Hold the fine-step key (default Alt) for fine steps. Step sizes and key are set in the popup.
+const MIN = 0.1, MAX = 4;
+
+let settings = DEFAULTS;
+const load = () => chrome.storage.sync.get(DEFAULTS, (s) => (settings = s));
+load();
+chrome.storage.onChanged.addListener(load);
 
 const video = document.getElementById('video');
 const select = document.getElementById('speed');
@@ -13,10 +18,11 @@ if (video && select) {
   select.title = 'Scroll to change speed';
 
   select.addEventListener('wheel', (e) => {
-    if (!e.deltaY) return;
+    const d = e.deltaY || (e.shiftKey && e.deltaX); // Chrome turns Shift+wheel into horizontal scroll
+    if (!d) return;
     e.preventDefault();
-    const step = e.altKey ? FINE_STEP : STEP;
-    const next = video.playbackRate + (e.deltaY < 0 ? step : -step);
+    const step = e[settings.fineKey] ? settings.fineStep : settings.step;
+    const next = video.playbackRate + (d < 0 ? step : -step);
     const rate = Math.min(MAX, Math.max(MIN, Math.round(next * 100) / 100));
     video.playbackRate = rate;
     const preset = [...select.options].find((o) => o !== custom && +o.value === rate);

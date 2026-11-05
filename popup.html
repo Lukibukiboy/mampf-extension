@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light dark; font: 13px/1.45 system-ui, sans-serif; }
+  body { width: 250px; margin: 14px; }
+  h1 { font-size: 15px; margin: 0 0 6px; }
+  p { margin: 0 0 12px; }
+  label { display: flex; justify-content: space-between; align-items: center; margin: 8px 0; }
+  input, select { width: 84px; box-sizing: border-box; font: inherit; }
+  input:invalid { outline: 2px solid #d33; }
+  kbd { padding: 0 4px; border: 1px solid #8888; border-radius: 4px; font: inherit; }
+  small { display: block; margin-top: 12px; opacity: .65; }
+</style>
+<h1>MaMpf Enhancer</h1>
+<p>In a MaMpf video, scroll over the speed selector (bottom right of the player) to change the playback speed. Hold <kbd id="key-name">Alt</kbd> while scrolling for fine steps.</p>
+<label>Step <input id="step" type="number" min="0.01" max="1" step="0.01" required></label>
+<label>Fine step <input id="fineStep" type="number" min="0.01" max="1" step="0.01" required></label>
+<label>Fine-step key
+  <select id="fineKey">
+    <option value="altKey">Alt</option>
+    <option value="ctrlKey">Ctrl</option>
+    <option value="shiftKey">Shift</option>
+  </select>
+</label>
+<small>Changes apply immediately. Unofficial, not affiliated with MaMpf or Heidelberg University.</small>
+<script src="defaults.js"></script>
+<script src="popup.js"></script>

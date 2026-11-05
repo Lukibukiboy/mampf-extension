@@ -1,12 +1,15 @@
 {
   "manifest_version": 3,
   "name": "MaMpf Enhancer",
-  "version": "0.1.0",
-  "description": "Scroll over the speed selector in MaMpf's video player to change playback speed.",
+  "version": "1.0.0",
+  "description": "Unofficial: change MaMpf lecture video speed with your scroll wheel. Hold Alt (configurable) for fine steps.",
+  "permissions": ["storage"],
+  "icons": { "128": "icon.png" },
+  "action": { "default_popup": "popup.html", "default_icon": "icon.png" },
   "content_scripts": [
     {
       "matches": ["https://mampf.mathi.uni-heidelberg.de/media/*"],
-      "js": ["content.js"]
+      "js": ["defaults.js", "content.js"]
     }
   ]
 }
